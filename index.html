@@ -79,7 +79,6 @@
     .muted-2 { color: var(--muted-2); }
     .gold { color: var(--gold-soft); }
 
-    /* ── Topbar ── */
     .topbar {
       position: sticky;
       top: 0;
@@ -140,7 +139,6 @@
 
     .lang strong { color: var(--text); }
 
-    /* ── Mobile hamburger ── */
     .burger {
       display: none;
       background: none;
@@ -182,7 +180,6 @@
     }
     .mobile-menu a:hover { color: var(--text); }
 
-    /* ── Hero ── */
     .hero {
       position: relative;
       padding: 84px 0 72px;
@@ -373,7 +370,6 @@
       color: var(--text);
     }
 
-    /* ── Content sections ── */
     section.content {
       padding: 72px 0;
     }
@@ -531,7 +527,6 @@
       line-height: 1.5;
     }
 
-    /* ── Life / Apply panel ── */
     .life-panel {
       background: linear-gradient(135deg, #1b4d3e 0%, #22262d 100%);
       border: 1px solid rgba(139,105,20,0.22);
@@ -591,7 +586,57 @@
       line-height: 1.7;
     }
 
-    /* ── Footer ── */
+    /* ── Sovereign Charter bridge ── */
+    .charter-bridge {
+      padding: 56px 0;
+    }
+
+    .charter-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(27,77,62,0.12), rgba(255,255,255,0.02));
+      border: 1px solid rgba(139,105,20,0.2);
+      border-radius: 30px;
+      padding: 38px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .charter-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+    }
+
+    .charter-card .section-kicker {
+      margin-top: 8px;
+    }
+
+    .charter-card h2 {
+      font-size: clamp(28px, 3.4vw, 42px);
+      margin-top: 16px;
+    }
+
+    .charter-text {
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .charter-card .btn {
+      margin-top: 26px;
+    }
+
     footer {
       border-top: 1px solid rgba(255,255,255,0.08);
       background: rgba(0,0,0,0.12);
@@ -631,7 +676,6 @@
       background: rgba(255,255,255,0.02);
     }
 
-    /* ── Responsive ── */
     @media (max-width: 1100px) {
       .hero-grid,
       .grid-2,
@@ -657,6 +701,7 @@
       .formula-item { font-size: 18px; }
       .footer-grid { text-align: left; }
       .footer-grid > div:last-child .legal { text-align: left; }
+      .charter-card { padding: 28px 22px; }
     }
   </style>
 </head>
@@ -694,7 +739,7 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Пилотный маршрут входа и укоренения</div>
-          <h1 class="serif">Не эмиграция.<br><span class="gold">А укоренение.</span></h1>
+          <h1 class="serif">Не эмиграция<br><span class="gold">А укоренение</span></h1>
           <div class="hero-lead">
             Russia Homestead — территориальный маршрут для семей, созидателей,
             инженеров, преподавателей, фермеров и специалистов, ищущих в России
@@ -930,6 +975,20 @@
         </div>
       </div>
     </section>
+
+    <!-- ════════ SOVEREIGN CHARTER BRIDGE ════════ -->
+    <section class="charter-bridge">
+      <div class="container">
+        <div class="charter-card">
+          <div class="section-kicker">Russia Homestead в более широком контексте</div>
+          <h2 class="serif">Это часть более широкого цивилизационного проекта</h2>
+          <div class="charter-text">
+            Russia Homestead — это практический маршрут. The Sovereign Charter — это более широкий цивилизационный горизонт, в котором территория, укоренение, семья, земля, образование и суверенное развитие рассматриваются как части одной системы.
+          </div>
+          <a class="btn secondary" href="https://thesovereigncharter.org" target="_blank" rel="noopener">Открыть The Sovereign Charter</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -974,10 +1033,6 @@
       btn.style.pointerEvents = 'none';
       btn.style.opacity = '0.6';
 
-      // ── Replace with real endpoint ──
-      // Option A: Formspree — replace YOUR_FORM_ID
-      // Option B: Netlify Forms — add netlify attribute to form
-      // Option C: mailto fallback below
       const data = {
         name: name,
         country: country,
@@ -985,7 +1040,6 @@
         message: document.getElementById('fmessage').value.trim()
       };
 
-      // Mailto fallback (works without backend)
       const subject = encodeURIComponent('Russia Homestead — заявка от ' + data.name);
       const body = encodeURIComponent(
         'Имя: ' + data.name +
