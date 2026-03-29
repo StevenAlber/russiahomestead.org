@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Russia Homestead — Не эмиграция. А укоренение.</title>
+  <meta name="description" content="Russia Homestead — bilingual RU/EN territorial route into rooted life in Russia through family, land, community, and EcoBioRegion settlement models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #16181c;
+      --bg-soft: #1d2127;
+      --panel: rgba(255,255,255,0.05);
+      --panel-2: rgba(255,255,255,0.075);
+      --text: #f4f1ea;
+      --muted: #c8c1b4;
+      --muted-2: #9a9386;
+      --line: rgba(255,255,255,0.1);
+      --gold: #8b6914;
+      --gold-soft: #d5bf85;
+      --green: #1b4d3e;
+      --green-soft: #284f45;
+      --milk: #f4f1ea;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(139,105,20,0.16), transparent 24%),
+        radial-gradient(circle at 92% 14%, rgba(27,77,62,0.28), transparent 22%),
+        radial-gradient(circle at 80% 78%, rgba(139,105,20,0.10), transparent 24%),
+        linear-gradient(180deg, #121417 0%, #171a1f 100%);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .muted { color: var(--muted); }
+    .muted-2 { color: var(--muted-2); }
+    .gold { color: var(--gold-soft); }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(15,17,21,0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand .name {
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    .brand .sub {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      font-size: 12px;
+    }
+
+    .lang strong { color: var(--text); }
+
+    .hero {
+      position: relative;
+      padding: 84px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 32%, rgba(27,77,62,0.38), transparent 20%),
+        radial-gradient(circle at 16% 70%, rgba(139,105,20,0.18), transparent 22%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+      border: 1px solid rgba(139,105,20,0.3);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 24px 0 0;
+      font-size: clamp(56px, 9vw, 108px);
+      line-height: 0.93;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-lead {
+      max-width: 770px;
+      margin-top: 28px;
+      font-size: 21px;
+      line-height: 1.75;
+      color: #ded7ca;
+    }
+
+    .hero-sub {
+      max-width: 740px;
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: transform .2s ease, background .2s ease, border .2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary {
+      background: linear-gradient(180deg, #9a761c 0%, #7e5f15 100%);
+      color: white;
+      box-shadow: 0 12px 30px rgba(139,105,20,0.25);
+    }
+    .btn.secondary {
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .hero-note {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted-2);
+    }
+
+    .hero-card {
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -22% auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,105,20,0.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .mini-card {
+      border-radius: 24px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      min-height: 170px;
+    }
+
+    .mini-card.light {
+      background: var(--milk);
+      color: #1b1f24;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .mini-card .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-soft);
+    }
+
+    .mini-card.light .label { color: var(--gold); }
+
+    .mini-card h3 {
+      margin: 12px 0 10px;
+      font-size: 26px;
+      line-height: 1.08;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: inherit;
+      opacity: 0.9;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .mini-wide {
+      grid-column: 1 / -1;
+      min-height: 0;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    section.content {
+      padding: 72px 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel.soft {
+      background: linear-gradient(180deg, rgba(27,77,62,0.18), rgba(255,255,255,0.03));
+      border-color: rgba(139,105,20,0.16);
+    }
+
+    .section-kicker {
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+    }
+
+    h2 {
+      margin: 14px 0 0;
+      font-size: clamp(34px, 4.6vw, 58px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .big-text {
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .stack { display: grid; gap: 14px; margin-top: 22px; }
+
+    .fact {
+      border-radius: 22px;
+      background: rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 18px;
+    }
+
+    .fact h4 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .fact p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .pillar {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 24px 22px;
+      min-height: 220px;
+    }
+
+    .pillar h3 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.05;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .pillar p {
+      margin: 14px 0 0;
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border-radius: 24px;
+      background: rgba(0,0,0,0.14);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #9a761c, #7e5f15);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .step h4 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .step p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .formula {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .formula-item {
+      border-radius: 20px;
+      padding: 16px 18px;
+      background: rgba(27,77,62,0.16);
+      border: 1px solid rgba(139,105,20,0.18);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .life-panel {
+      background: linear-gradient(135deg, #1b4d3e 0%, #22262d 100%);
+      border: 1px solid rgba(139,105,20,0.22);
+      border-radius: 38px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .life-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .form-box {
+      border-radius: 30px;
+      background: rgba(0,0,0,0.16);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 24px;
+    }
+
+    .field {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      padding: 15px 16px;
+      border-radius: 18px;
+      font: inherit;
+      outline: none;
+      margin-top: 12px;
+    }
+
+    .field::placeholder { color: #cbc3b6; }
+    textarea.field { min-height: 120px; resize: vertical; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.12);
+      padding: 30px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: end;
+    }
+
+    .legal {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--muted-2);
+    }
+
+    .divider-section {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .grid-2,
+      .life-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillars { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 820px) {
+      .menu { display: none; }
+      h1 { font-size: 56px; }
+      .hero-lead { font-size: 18px; }
+      .card-grid,
+      .people-grid,
+      .pillars { grid-template-columns: 1fr; }
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero, section.content { padding: 56px 0; }
+      .panel, .life-panel { padding: 24px; }
+      .mini-wide { grid-column: auto; }
+      .formula-item { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="sub">Russia Homestead</div>
+        <div class="name serif">Не эмиграция. А укоренение.</div>
+      </div>
+      <nav class="menu">
+        <a href="#why">Почему Россия</a>
+        <a href="#route">Маршрут</a>
+        <a href="#territory">Территория</a>
+        <a href="#apply">Подать заявку</a>
+        <span class="lang"><strong>RU</strong><span class="muted-2">|</span><span class="muted">EN</span></span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Пилотный маршрут входа и укоренения</div>
+          <h1 class="serif">Не эмиграция.<br><span class="gold">А укоренение.</span></h1>
+          <div class="hero-lead">
+            Russia Homestead — территориальный маршрут для семей, созидателей,
+            инженеров, преподавателей, фермеров и специалистов, ищущих в России
+            не просто новое место, а новую форму жизни.
+          </div>
+          <div class="hero-sub">
+            Если вы чувствуете, что прежний мир больше не даёт ни опоры, ни смысла,
+            ни будущего для детей, возможно, вам нужен не очередной переезд, а
+            вхождение в территорию, где семья, земля, образование, труд и культурная
+            норма снова собраны в одну живую систему.
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="#apply">Подать предварительную заявку</a>
+            <a class="btn secondary" href="#route">Получить обзор маршрута</a>
+          </div>
+          <div class="hero-note">Пилотный формат. Предварительный отбор. Принимающая территория.</div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-grid">
+            <div class="mini-card light">
+              <div class="label">Фокус</div>
+              <h3>Семья + территория + дело</h3>
+              <p>Не просто въезд в страну, а вход в среду, где возможно строить жизнь на земле, в сообществе и в длинном историческом времени.</p>
+            </div>
+            <div class="mini-card">
+              <div class="label">Логика</div>
+              <h3>Не процедура, а территория</h3>
+              <p>Ядром маршрута является не кабинет, а принимающая среда: земля, жильё, дети, язык, сообщество и человеческий ритм жизни.</p>
+            </div>
+            <div class="mini-card mini-wide">
+              <div class="label">Для кого</div>
+              <div class="people-grid">
+                <div class="tag">Семьи с детьми, ищущие устойчивую среду жизни</div>
+                <div class="tag">Инженеры, технари, ИТ-специалисты и исследователи</div>
+                <div class="tag">Фермеры и специалисты по живым системам</div>
+                <div class="tag">Предприниматели, преподаватели, мастера и строители нового уклада</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="content">
+      <div class="container grid-2">
+        <div class="panel">
+          <div class="section-kicker">Почему этот путь становится необходимым</div>
+          <h2>Всё больше людей ищут не новый адрес, а новую форму жизни.</h2>
+          <div class="big-text">
+            Сегодня во многих странах экономика может продолжать работать, технологии могут развиваться,
+            а города — сиять. Но сама ткань жизни распадается: семья теряет устойчивость, дети растут без
+            культурной опоры, образование отрывается от реальности, а земля перестаёт быть домом и становится товаром.
+          </div>
+          <div class="big-text">
+            На этом фоне Россия всё чаще воспринимается не просто как государство, а как одно из немногих пространств,
+            где ещё возможно строить жизнь на другой основе: семья, традиция, земля, служение, образование и длинная воля.
+          </div>
+        </div>
+
+        <div class="panel soft">
+          <div class="section-kicker">Это не такое</div>
+          <div class="stack">
+            <div class="fact">
+              <h4>Не визовый сервис</h4>
+              <p>Речь идёт не только о документах, а о вхождении в жизненную среду.</p>
+            </div>
+            <div class="fact">
+              <h4>Не хаотичный переезд</h4>
+              <p>Маршрут строится вокруг принимающей территории, сопровождения и понятного порядка шагов.</p>
+            </div>
+            <div class="fact">
+              <h4>Не одиночная эмиграция</h4>
+              <p>Человек или семья входят не в пустоту, а в формирующееся сообщество.</p>
+            </div>
+            <div class="fact">
+              <h4>Не бегство</h4>
+              <p>Это осознанный выбор цивилизационного укоренения.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="divider-section content">
+      <div class="container">
+        <div class="section-kicker">Что открывается перед участником маршрута</div>
+        <h2>Не разрозненные услуги, а собранная система опор.</h2>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Территория</h3>
+            <p>Не абстрактная страна, а конкретный принимающий контур: ЭкоБиоРегион, пилотная площадка, экспериментальный населённый пункт.</p>
+          </div>
+          <div class="pillar">
+            <h3>Сопровождение</h3>
+            <p>Не хаотичное движение по кабинетам, а собранный маршрут с предварительным отбором и логикой входа.</p>
+          </div>
+          <div class="pillar">
+            <h3>Среда укоренения</h3>
+            <p>Не только жильё, но и сообщество, образовательная и культурная связность, ритм нормальной жизни.</p>
+          </div>
+          <div class="pillar">
+            <h3>Дело</h3>
+            <p>Фермерство, инженерия, образование, ИТ, ремесло, исследование, биоэкономика и территориальное предпринимательство.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="route" class="content">
+      <div class="container grid-2">
+        <div class="panel">
+          <div class="section-kicker">Кому это подходит</div>
+          <h2>Мы рассматриваем не массовый поток, а зрелых и способных к укоренению людей.</h2>
+          <div class="stack">
+            <div class="tag">Семьи с детьми, ищущие устойчивую среду жизни</div>
+            <div class="tag">Инженеры, технари, ИТ-специалисты и исследователи</div>
+            <div class="tag">Фермеры, аграрии и специалисты по живым системам</div>
+            <div class="tag">Предприниматели и мастера, готовые строить уклад, а не только доход</div>
+            <div class="tag">Преподаватели, наставники и строители образовательной среды</div>
+            <div class="tag">Люди, для которых традиция, ответственность и семья — реальность, а не риторика</div>
+          </div>
+          <div class="big-text">Этот путь не для тех, кто ищет лёгкую иммиграцию, потребительский комфорт без обязательств или формальный запасной аэродром.</div>
+        </div>
+
+        <div class="panel soft">
+          <div class="section-kicker">Как устроен маршрут входа</div>
+          <h2>Не хаос, а последовательность. Не одиночество, а сопровождение.</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div>
+                <h4>Предварительная заявка</h4>
+                <p>Краткая информация о семье, профессиональном профиле, мотивации и желаемом формате участия.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div>
+                <h4>Первичный отбор</h4>
+                <p>Собеседование и оценка того, насколько ваш профиль соответствует логике пилотной территории.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div>
+                <h4>Карта входа</h4>
+                <p>Для подходящих участников формируется предварительный маршрут: территория, формат участия, документы, следующий этап.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div>
+                <h4>Подготовка к прибытию</h4>
+                <p>Инструкции, координация, согласование принимающей стороны и первичная организационная сборка до въезда.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div>
+                <h4>Адаптация и укоренение</h4>
+                <p>Не просто въезд, а включение в среду: земля, сообщество, язык, дети, дело и повседневная жизнь.</p>
+              </div>
+            </div>
+          </div>
+          <div class="big-text">Юридический статус, сроки и конкретные действия зависят от страны происхождения, семейной ситуации, профессионального профиля и действующего правового режима. Маршрут строится индивидуально, но в рамках общей пилотной системы.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="territory" class="divider-section content">
+      <div class="container grid-2">
+        <div>
+          <div class="section-kicker">Почему территория важнее одной бюрократии</div>
+          <h2>Человека можно довести до страны. Но нужно довести его до жизни.</h2>
+          <div class="big-text">
+            Главная ошибка большинства иммиграционных моделей в том, что человека доводят до страны, но не доводят до жизни. Ему могут оформить визу, перевести бумаги и даже помочь с первым жильём — но дальше он остаётся один на один с языком, школой, банком, регистрацией, бытовой средой и внутренней пустотой.
+          </div>
+          <div class="big-text">
+            Мы исходим из другого принципа: человеку нужна не только процедура въезда, а территория укоренения. Поэтому ядром маршрута является не кабинет, а принимающая среда. Не бумага, а жизнь.
+          </div>
+        </div>
+        <div class="panel">
+          <div class="section-kicker">Психологическая формула проекта</div>
+          <div class="formula">
+            <div class="formula-item">Не эмиграция, а укоренение</div>
+            <div class="formula-item">Не одиночный переезд, а вход в принимающую среду</div>
+            <div class="formula-item">Не хаос, а спроектированный маршрут</div>
+            <div class="formula-item">Не обещание чудес, а серьёзная работа с реальностью</div>
+          </div>
+          <div class="big-text">Здесь вас не зовут в хаос. Здесь вас зовут в спроектированную территорию жизни.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="content">
+      <div class="container life-panel">
+        <div class="life-grid">
+          <div>
+            <div class="section-kicker">Какой может быть ваша новая жизнь</div>
+            <h2>Дом на земле. Дети в живой среде. Дело, связанное с будущим, а не с выживанием.</h2>
+            <div class="big-text" style="color:#e4ddd1; max-width: 760px;">
+              Для одного это может быть аграрная лаборатория и работа с живыми системами. Для другого — инженерный или ИТ-контур в территориальном проекте. Для третьего — школа, ремесло, семейное дело, восстановление земли, оздоровительная среда или архитектура нового поселения.
+            </div>
+            <div class="big-text" style="color:#e4ddd1; max-width: 760px;">
+              Речь идёт не о бегстве «в деревню», а о входе в новую сборку жизни: где человек не исчезает в городской массе, а обретает имя, дело и горизонт.
+            </div>
+          </div>
+          <div class="form-box">
+            <div class="section-kicker">Предварительная заявка</div>
+            <input class="field" placeholder="Имя / семья" />
+            <input class="field" placeholder="Страна проживания" />
+            <input class="field" placeholder="Профессиональный профиль" />
+            <textarea class="field" placeholder="Коротко расскажите, какой путь и какой формат жизни вы ищете"></textarea>
+            <div class="cta-row" style="margin-top: 16px;">
+              <button class="btn primary" style="width:100%;">Отправить заявку</button>
+            </div>
+            <div class="hero-note" style="margin-top:16px; line-height:1.8;">
+              Пилотный формат. Не государственная автоматическая процедура, а частная инициатива предварительного отбора, сопровождения и маршрутизации в рамках действующего правового поля.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <div class="sub">Russia Homestead</div>
+          <div class="name serif">Россия как территория укоренения</div>
+        </div>
+        <div class="legal" style="margin-top: 12px; max-width: 720px;">
+          Этот проект не является государственным обещанием автоматического статуса, земли или гражданства. Это частная цивилизационная и территориальная инициатива, выстраивающая практический маршрут входа, адаптации и укоренения для подходящих участников.
+        </div>
+      </div>
+      <div class="legal" style="text-align:right;">
+        Каждая заявка рассматривается отдельно. Итоговый маршрут зависит от правового режима, профиля семьи, территории и готовности обеих сторон.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
