@@ -520,7 +520,7 @@
           <div class="eyebrow" data-en="A pilot route of entry and rooted life" data-ru="Пилотный маршрут входа и укоренения">A pilot route of entry and rooted life</div>
           <h1 class="serif hero-title">
             <span data-en="Not emigration" data-ru="Не эмиграция">Not emigration</span>
-            <span class="gold" data-en="Rooted life" data-ru="А укоренение">Rooted life</span>
+            <span class="gold" data-en="A rooted life" data-ru="А укоренение">A rooted life</span>
           </h1>
           <div class="hero-lead" data-en="Russia Homestead is a territorial route for families, builders and specialists seeking in Russia not just a new place, but a new form of life." data-ru="Russia Homestead — территориальный маршрут для семей, созидателей и специалистов, ищущих в России не просто новое место, а новую форму жизни.">Russia Homestead is a territorial route for families, builders and specialists seeking in Russia not just a new place, but a new form of life.</div>
           <div class="hero-sub" data-en="If you feel that the world you live in no longer offers stability, meaning, or a future for your children — perhaps what you need is not another relocation, but entry into a territory where family, land, education, work and cultural norms are woven back into one living system." data-ru="Если вы чувствуете, что прежний мир больше не даёт ни опоры, ни смысла, ни будущего для детей — возможно, вам нужен не очередной переезд, а вхождение в территорию, где семья, земля, образование, труд и культурная норма снова собраны в одну живую систему.">If you feel that the world you live in no longer offers stability, meaning, or a future for your children — perhaps what you need is not another relocation, but entry into a territory where family, land, education, work and cultural norms are woven back into one living system.</div>
@@ -699,12 +699,15 @@
         </div>
         <div class="legal" style="margin-top: 12px; max-width: 720px;" data-en="This project is not a state promise of automatic status, land or citizenship. It is a private civilizational and territorial initiative building a practical route of entry, adaptation and rooted life for suitable participants." data-ru="Этот проект не является государственным обещанием автоматического статуса, земли или гражданства. Это частная цивилизационная и территориальная инициатива, выстраивающая практический маршрут входа, адаптации и укоренения для подходящих участников.">This project is not a state promise of automatic status, land or citizenship. It is a private civilizational and territorial initiative building a practical route of entry, adaptation and rooted life for suitable participants.</div>
       </div>
-      <div class="legal" style="text-align:right;" data-en="Each application is reviewed individually. The final route depends on the legal framework, family profile, territory and readiness of both sides." data-ru="Каждая заявка рассматривается отдельно. Итоговый маршрут зависит от правового режима, профиля семьи, территории и готовности обеих сторон.">Each application is reviewed individually. The final route depends on the legal framework, family profile, territory and readiness of both sides.<br><br>&copy; 2026 Russia Homestead</div>
+      <div>
+        <div class="legal" style="text-align:right;" data-en="Each application is reviewed individually. The final route depends on the legal framework, family profile, territory and readiness of both sides." data-ru="Каждая заявка рассматривается отдельно. Итоговый маршрут зависит от правового режима, профиля семьи, территории и готовности обеих сторон.">Each application is reviewed individually. The final route depends on the legal framework, family profile, territory and readiness of both sides.</div>
+        <div class="legal" style="text-align:right; margin-top:14px;">&copy; 2026 Russia Homestead</div>
+      </div>
     </div>
   </footer>
 
   <script>
-    let currentLang = 'en';
+    var currentLang = 'en';
 
     function setLang(lang) {
       currentLang = lang;
@@ -750,12 +753,15 @@
       btn.textContent = currentLang === 'ru' ? 'Отправляется…' : 'Sending…';
       btn.style.pointerEvents = 'none';
       btn.style.opacity = '0.6';
-      var subject = encodeURIComponent('Russia Homestead — application from ' + name);
+      var ru = currentLang === 'ru';
+      var subject = encodeURIComponent(
+        ru ? 'Russia Homestead — заявка от ' + name : 'Russia Homestead — application from ' + name
+      );
       var body = encodeURIComponent(
-        'Name: ' + name +
-        '\nCountry: ' + country +
-        '\nProfile: ' + (document.getElementById('fprofile').value.trim() || '—') +
-        '\nMessage: ' + (document.getElementById('fmessage').value.trim() || '—')
+        (ru ? 'Имя: ' : 'Name: ') + name +
+        '\n' + (ru ? 'Страна: ' : 'Country: ') + country +
+        '\n' + (ru ? 'Профиль: ' : 'Profile: ') + (document.getElementById('fprofile').value.trim() || '—') +
+        '\n' + (ru ? 'Сообщение: ' : 'Message: ') + (document.getElementById('fmessage').value.trim() || '—')
       );
       window.location.href = 'mailto:hello@russiahomestead.org?subject=' + subject + '&body=' + body;
       setTimeout(function() {
@@ -764,10 +770,17 @@
       }, 600);
     }
 
+    // Init
     try {
       var saved = localStorage.getItem('rh_lang');
-      if (saved === 'ru') setLang('ru');
-    } catch(e) {}
+      if (saved === 'ru') {
+        setLang('ru');
+      } else {
+        setLang('en');
+      }
+    } catch(e) {
+      setLang('en');
+    }
   </script>
 </body>
 </html>
