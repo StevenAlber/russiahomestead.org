@@ -472,6 +472,7 @@
             <div id="formContent">
               <div class="section-kicker" data-en="Preliminary application" data-ru="Предварительная заявка">Preliminary application</div>
               <input class="field" id="fname" data-ph-en="Name / family" data-ph-ru="Имя / семья" placeholder="Name / family" required />
+              <input class="field" id="femail" type="email" data-ph-en="Email address" data-ph-ru="Электронная почта" placeholder="Email address" required />
               <input class="field" id="fcountry" data-ph-en="Country of residence" data-ph-ru="Страна проживания" placeholder="Country of residence" required />
               <input class="field" id="fprofile" data-ph-en="Professional profile" data-ph-ru="Профессиональный профиль" placeholder="Professional profile" />
               <textarea class="field" id="fmessage" data-ph-en="Briefly describe the path and form of life you are looking for" data-ph-ru="Коротко расскажите, какой путь и какой формат жизни вы ищете" placeholder="Briefly describe the path and form of life you are looking for"></textarea>
@@ -555,13 +556,17 @@
 
     function submitForm() {
       var fname = document.getElementById('fname');
+      var femail = document.getElementById('femail');
       var fcountry = document.getElementById('fcountry');
       fname.style.borderColor = '';
+      femail.style.borderColor = '';
       fcountry.style.borderColor = '';
       var name = fname.value.trim();
+      var email = femail.value.trim();
       var country = fcountry.value.trim();
-      if (!name || !country) {
+      if (!name || !email || !country) {
         if (!name) fname.style.borderColor = '#8b6914';
+        if (!email) femail.style.borderColor = '#8b6914';
         if (!country) fcountry.style.borderColor = '#8b6914';
         return;
       }
@@ -574,6 +579,8 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           name: name,
+          _replyto: email,
+          email: email,
           country: country,
           profile: document.getElementById('fprofile').value.trim() || '—',
           message: document.getElementById('fmessage').value.trim() || '—',
