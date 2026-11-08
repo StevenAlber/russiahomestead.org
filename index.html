@@ -14,7 +14,7 @@
   <meta property="og:title" content="Russia Homestead — не эмиграция, а укоренение" />
   <meta property="og:description" content="Практический маршрут к укоренённой жизни в России для семей, созидателей и специалистов." />
   <meta property="og:url" content="https://russiahomestead.org/" />
-  <meta property="og:image" content="https://russiahomestead.org/og-ru.jpg" />
+  <meta property="og:image" content="https://russiahomestead.org/og-ru-v3.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -24,14 +24,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Russia Homestead — не эмиграция, а укоренение" />
   <meta name="twitter:description" content="Практический маршрут к укоренённой жизни в России для семей, созидателей и специалистов." />
-  <meta name="twitter:image" content="https://russiahomestead.org/og-ru.jpg" />
+  <meta name="twitter:image" content="https://russiahomestead.org/og-ru-v3.jpg" />
   <meta name="twitter:image:alt" content="Russia Homestead: не эмиграция, а укоренение" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#16181c" />
+  <meta name="theme-color" content="#F4F8F4" />
   <link rel="preload" href="/fonts/cormorant-garamond-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Russia Homestead — не эмиграция, а укоренение", "url": "https://russiahomestead.org/", "description": "Russia Homestead — практический маршрут к укоренённой жизни в России для семей, созидателей и специалистов: принимающая территория, сопровождение и предварительная заявка.", "inLanguage": "ru", "isPartOf": {"@type": "WebSite", "name": "Russia Homestead", "url": "https://russiahomestead.org/"}}</script>
   <style>
@@ -342,6 +342,60 @@
     p.hero-lead, p.hero-sub, p.big-text, p.hero-note, p.charter-text, p.legal { margin-bottom: 0; }
     p.hero-lead { margin-top: 28px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    /* ===== Light theme: «Сибирское утро» ===== */
+    :root { --bg:#F4F8F4; --text:#12352A; --muted:#3F5249; --muted-2:#56675F; --line:rgba(18,53,42,.12); --gold:#8B6914; --gold-soft:#7A5A10; --green:#2E7D57; --milk:#FFFFFF; --shadow:0 18px 48px rgba(18,53,42,.08); }
+    body { color: var(--text); background:
+      radial-gradient(circle at 8% 0%, rgba(232,190,90,.24), transparent 32%),
+      radial-gradient(circle at 94% 4%, rgba(120,185,205,.24), transparent 30%),
+      radial-gradient(circle at 78% 88%, rgba(46,125,87,.10), transparent 32%),
+      linear-gradient(180deg, #F8FBF6 0%, #EEF5F0 100%); }
+    .topbar { background: rgba(248,251,246,.88); border-bottom: 1px solid var(--line); }
+    .brand .sub, .section-kicker, .menu .charter-link, .footer-contact a.charter { color: #7A5A10; }
+    .menu { color: var(--muted); } .menu a:hover { color: var(--green); }
+    .lang-switch { background: #fff; border-color: var(--line); }
+    .lang-switch a { color: var(--muted-2); } .lang-switch a[aria-current] { background: rgba(139,105,20,.12); color: #7A5A10; }
+    .burger span { background: var(--text); }
+    .mobile-menu { background: rgba(248,251,246,.98); } .mobile-menu a { color: var(--text); } .mobile-menu a:hover { color: var(--green); }
+    .hero::before { background: radial-gradient(circle at 84% 30%, rgba(120,185,205,.20), transparent 24%), radial-gradient(circle at 14% 76%, rgba(232,190,90,.18), transparent 24%); }
+    .hero-title { color: var(--text); }
+    .hero-title .gold { background: linear-gradient(180deg, #AE8320 0%, #946A12 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .eyebrow { background: #fff; border-color: rgba(139,105,20,.28); color: #7A5A10; }
+    .hero-lead { color: var(--text); } .hero-sub, .big-text { color: var(--muted); } .hero-note { color: var(--muted-2); }
+    .btn.primary { box-shadow: 0 10px 24px rgba(139,105,20,.22); }
+    .btn.secondary { background: #fff; border-color: rgba(18,53,42,.18); color: var(--text); } .btn.secondary:hover { border-color: var(--green); }
+    .btn.charter { background: #fff; border-color: rgba(139,105,20,.35); color: #7A5A10; } .btn.charter:hover { background: #FBF6E8; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.74)); border-color: rgba(18,53,42,.08); box-shadow: var(--shadow); }
+    .hero-card::after { background: radial-gradient(circle, rgba(232,190,90,.26), transparent 68%); }
+    .mini-card { background: #F5FAF6; border-color: rgba(18,53,42,.08); }
+    .mini-card .label { color: #7A5A10; }
+    .mini-card.light { background: linear-gradient(160deg, #2E7D57, #246A49); color: #fff; border-color: transparent; }
+    .mini-card.light .label { color: #FFF8E6; }
+    .tag { background: #fff; border-color: rgba(18,53,42,.10); color: var(--text); }
+    .panel { background: rgba(255,255,255,.84); border-color: rgba(18,53,42,.08); box-shadow: var(--shadow); }
+    .panel.soft { background: linear-gradient(180deg, #E8F4EC, #F8FBF8); border-color: rgba(46,125,87,.16); }
+    .fact, .step { background: #fff; border-color: rgba(18,53,42,.08); }
+    .fact p, .step p, .pillar p { color: var(--muted); }
+    .pillar { background: rgba(255,255,255,.88); border-color: rgba(18,53,42,.08); box-shadow: 0 10px 28px rgba(18,53,42,.05); }
+    .step-num { color: #fff; }
+    .formula-item { background: #fff; border-color: rgba(46,125,87,.20); box-shadow: inset 3px 0 0 var(--green); }
+    .divider-section { background: rgba(255,255,255,.5); border-color: var(--line); }
+    .life-panel { background: linear-gradient(135deg, #E1F0E6 0%, #F2F8EE 55%, #FBF3DC 100%); border-color: rgba(46,125,87,.18); box-shadow: var(--shadow); }
+    .apply-text { color: var(--text); max-width: 760px; }
+    .form-box { background: #fff; border-color: rgba(18,53,42,.08); box-shadow: 0 10px 30px rgba(18,53,42,.06); }
+    .field { background: #F4F8F5; border-color: rgba(18,53,42,.16); color: var(--text); }
+    .field:focus { background: #fff; border-color: var(--green); }
+    .field[aria-invalid="true"] { border-color: #B0562F; }
+    .field-label { color: var(--muted); } .field-label .req { color: #7A5A10; }
+    .form-error { color: #9A3B1C; } .privacy-note { color: var(--muted-2); }
+    .form-success p { color: var(--muted); }
+    .charter-card { background: linear-gradient(180deg, #FFFFFF, #F7FBF6); border-color: rgba(139,105,20,.22); box-shadow: var(--shadow); }
+    .charter-card::before { background: linear-gradient(90deg, transparent, #B8892A, transparent); }
+    .charter-text { color: var(--muted); } .charter-note { color: var(--muted-2); }
+    footer { background: #E9F2EC; border-top-color: var(--line); }
+    .footer-contact a { color: var(--muted); } .footer-contact a:hover { color: var(--green); }
+    .legal { color: var(--muted-2); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline-color: var(--green); }
+    .skip { background: var(--text); color: #fff; }
 
   </style>
 </head>
@@ -453,8 +507,8 @@
           <div>
             <div class="section-kicker">Какой может стать ваша новая жизнь</div>
             <h2>Дом на земле. Дети в живой среде. Дело, связанное с будущим</h2>
-            <p class="big-text" style="color:#e4ddd1; max-width: 760px;">Для кого-то это может быть аграрная лаборатория и работа с живыми системами. Для кого-то — инженерный или ИТ-контур в территориальном проекте. Для других — школа, ремесло, семейное дело, восстановление земли, оздоровительная среда или архитектура нового поселения.</p>
-            <p class="big-text" style="color:#e4ddd1; max-width: 760px;">Речь идёт о входе в новую сборку жизни — туда, где человек обретает имя, дело и горизонт.</p>
+            <p class="big-text apply-text">Для кого-то это может быть аграрная лаборатория и работа с живыми системами. Для кого-то — инженерный или ИТ-контур в территориальном проекте. Для других — школа, ремесло, семейное дело, восстановление земли, оздоровительная среда или архитектура нового поселения.</p>
+            <p class="big-text apply-text">Речь идёт о входе в новую сборку жизни — туда, где человек обретает имя, дело и горизонт.</p>
           </div>
           <div class="form-box">
             <form id="applyForm" novalidate>
