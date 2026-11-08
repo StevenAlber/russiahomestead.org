@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#16181c"/>
-  <path d="M256 80 L256 432" stroke="#1b4d3e" stroke-width="4" fill="none"/>
-  <path d="M256 120 C206 160 146 200 146 270 C146 340 196 400 256 432 C316 400 366 340 366 270 C366 200 306 160 256 120Z" fill="#1b4d3e"/>
-  <path d="M256 170 C226 195 196 225 196 275 C196 325 226 365 256 390 C286 365 316 325 316 275 C316 225 286 195 256 170Z" fill="#284f45"/>
-  <circle cx="256" cy="275" r="28" fill="#8b6914"/>
-  <circle cx="256" cy="275" r="14" fill="#d5bf85"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><radialGradient id="bg" cx="38%" cy="22%" r="85%"><stop offset="0" stop-color="#FFF6DD"/><stop offset=".45" stop-color="#F5F9F3"/><stop offset="1" stop-color="#E2EFE6"/></radialGradient><linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3D684"/><stop offset=".55" stop-color="#D2A23A"/><stop offset="1" stop-color="#A97A16"/></linearGradient><clipPath id="c"><rect width="512" height="512" rx="112"/></clipPath></defs><g clip-path="url(#c)"><rect width="512" height="512" fill="url(#bg)"/><circle cx="256" cy="310" r="88" fill="url(#sun)"/><path d="M0 330 C95 295 165 310 256 316 S425 292 512 322 V512 H0Z" fill="#D3E9DA"/><path d="M0 370 C95 342 180 358 260 354 S422 336 512 360 V512 H0Z" fill="#8FC4A4"/><path d="M0 416 C105 393 192 407 272 403 S430 388 512 407 V512 H0Z" fill="#2E7D57"/><polyline points="134,240 256,130 378,240" fill="none" stroke="#12352A" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
